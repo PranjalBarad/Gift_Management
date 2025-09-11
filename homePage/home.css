@@ -1,0 +1,394 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: mulish;
+    text-decoration: none;
+}
+::-webkit-scrollbar{
+    display: none;
+}
+.container{
+    width:100vw;
+    height: auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+
+}
+/*      IMAGE SLIDER OR SHOP NOW      */
+.img-slider
+{
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+  display: flex;
+  justify-content: left;
+    flex-direction: column;
+}
+.img_home{
+    /* width: 100%;
+    height: calc(100vh - 84px);
+    position: relative;
+    overflow: hidden;
+    background-image: url("../../project/photos/1.png");
+    background-repeat: no-repeat;
+    background-position: bottom;
+    z-index: -1;
+    background-size: cover;
+    display: flex;
+    justify-content: left;
+    align-items: center; */
+    width: 100%;
+  height: 40.09rem;
+  object-fit: cover;
+  overflow: hidden;
+  object-position: top right;
+  box-sizing: border-box;
+    
+}
+.hero-text{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    z-index: 1;
+    top: 15rem;
+    left: 4rem;
+    gap: 1.9rem;
+ }
+.hero-head{
+    font-family: var(--font-style);
+    font-size: 36px;
+    font-weight: bold;
+    color: #ffffff;
+}
+.hero-para{
+    font-family: var(--font-style);
+    font-size: 24px;
+    font-weight: 600;
+    color: #ffffff;
+    opacity: 0.7;
+}
+.hero-btn{
+    height: 60px;
+    width: 200px;
+    background-color: #fcfbfdcc;
+    border: 1px solid #382D72;
+    border-radius: 10px;
+    font-family: var(--font-style);
+    font-size: 22px;
+    font-weight: 700;
+    color: #42336E;
+    cursor: pointer;
+   
+}
+
+.hero-btn:hover
+{
+  background-color: #42336E;
+  color: #fcfbfdcc;
+}
+
+/*         GIFTS BT CATEGORIES      */
+
+    .categories{
+        margin-top: 100px;
+        display: flex;
+        flex-direction: column;
+        gap: 80px;
+        padding: 0px 100px ;
+    }
+    .categories-head{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+    .categories-head-text{
+    
+        font-weight: 800;
+        color: #42336E;
+        font-size: 32px;
+    }
+    .categories-head-para{
+        color: #180818;
+        font-size: 16px;
+    }
+    .categories-cards{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 80px;
+    }
+    .card{
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+    }
+    .card-text{
+    
+        font-size: 24px;
+        font-weight: 600;
+        color: #382D72cc;
+    }
+    .card-img
+    {
+        height: 20.5rem;
+    }
+    /* .card.img > img:hover{
+        transform: scale(1.1);
+
+    } */
+
+
+/*       WEDDING GIFTS       */
+
+        .create{
+            position: relative;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+            margin-top: 6rem;
+            width: 100%;
+            height: 21rem ;
+            /* padding: 0 3.4rem; */
+            background-color: #f3d2ee;
+            
+        }
+        .boximage {
+             height: 100%;
+        }
+        .createImage
+        {
+            position: absolute;
+            object-fit: cover;
+            max-height: 25rem;
+            left: 0;
+            bottom: 0;
+            z-index: 1;
+        }
+
+        .createBox
+        {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+            color: #733581;
+            gap: 20px;
+            /* flex-wrap: wrap; */
+        }
+        .createBox h2
+        {
+            font-weight: 850;
+            font-size: 1.85rem;
+        }
+        .createBox h4 {
+            line-height: 30px;
+            max-width: 430px;
+            letter-spacing: 1px;
+        
+        }
+        .createBtn
+        {
+            /* height: 40px; */
+            padding: 8px 10px;
+            max-width: 10rem;
+            background: linear-gradient(to right, #aa72bb, #e0cae0 );
+            color:rgb(38, 9, 35);
+            border: 1px solid #5b4a82;
+            border-radius: 15px;
+            font-size: 18px;
+            font-weight: 700;
+        }
+        .createBtn:hover{
+            
+            background: linear-gradient(to left, #cd92cd, #0f0e0e );
+            color: white;
+        }
+        .createImage2
+        {
+            position: absolute;
+            object-fit: cover;
+            max-height: 22rem;
+            right: 0;
+            bottom: 0;
+            z-index: 1;
+        }
+
+
+/*          BEST SELLER !!!!     */
+
+        .bestSeller{
+            margin-top: 100px;
+            display: flex;
+            flex-direction: column;
+            gap: 80px;
+            text-align: center;
+            padding: 0px 100px ;
+        }
+        .bestSeller-head{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .bestSeller-head-text{
+        
+            font-weight: 800;
+            color: #42336E;
+            font-size: 32px;
+        }
+        .bestSeller-head-para{
+        
+            color: #180818;
+            font-size: 16px;
+        }
+        .bestSeller-cards{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 80px;
+            /* row-gap: 70px; */
+            /* height: 13rem; */
+        }
+        .Bcard{
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            width:17rem;
+    
+        }
+        .Bcard-text{
+        
+            font-size: 24px;
+            font-weight: 600;
+            color: #382D72cc;
+        }
+        .Bcard-img
+        {
+            height: 20.5rem;
+        }
+        .Bcard.img > img:hover{
+            transform: scale(1.1);
+
+        }
+
+
+/*      REVIEWS      */
+
+    .reviews
+    {  
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 6rem;
+        width: 100%;
+        height: 23.5rem ;
+        /* background-color: ##d5a7fa; */
+        background: #cebddf;   
+        padding: 20px;
+        flex-wrap: wrap;
+        overflow: hidden;
+    }
+
+    .reviews h2 {
+        width: 100%;
+        /* margin: 30px 0 20px; */
+        text-align: center;
+        font-size: 24px;
+        font-weight: bold;
+        }
+
+    .Review_all {
+        /* background: #f4f4f8; */
+        border-radius: 12px;
+        padding: 18px;
+        margin-right: 20px;
+        width: 20rem;
+        box-shadow: 0 2px 6px rgba(0,0,0,1);
+        text-align: left;
+        background:#f4edff;
+        color: #733581;
+        border: 1px solid #000000;
+        border-radius: 20px;
+        }
+    .clr{
+        color:#54235f;
+    }
+        .stars {
+        color: gold;
+        font-size: 26px;
+        font-weight: bold;
+        letter-spacing: 10px;
+        text-align: center;
+        }
+
+        .review-text {
+        margin: 10px 0;
+        font-size: 14px;
+        line-height: 1.4;
+        }
+
+        .name {
+        margin-top: 10px;
+        font-weight: bold;
+        text-align: center;
+        }
+
+
+/*   LAST TEXTS    (RAED MORE..) */
+
+.readMore
+{
+    /* padding-top: 20px; */
+    display: flex;
+    gap: 1.1rem;
+    flex-direction: column;
+    margin: 6rem 3.5rem;
+    text-align: left;
+    padding: 0px 100px ;
+    word-spacing: 1px;
+    letter-spacing: 1px;
+    color: #763b83;
+}
+.read-head
+{
+    font-size: 22px;
+    font-weight: 650;
+    color:#5f0d72;
+}
+#ch
+{
+    display: none;
+}
+#ch:checked ~.more-text
+{
+    display: block;
+    display: flex;
+    flex-direction: column;
+    gap:1.1rem;
+    
+}
+#ch:checked ~ label
+{
+    display: none;
+}
+.more-text
+{
+    display: none;
+}
+.readMore label{
+    display: inline-block;
+    color:#5f0d72;
+    font-size: 17px;
+    font-weight: 600;
+}

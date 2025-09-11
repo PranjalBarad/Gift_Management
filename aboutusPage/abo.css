@@ -1,0 +1,115 @@
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fff;
+      color: #333;
+    }
+
+    .section {
+      width: 90%;
+      max-width: 1100px;
+      margin: 60px auto;
+      position: relative;
+    }
+
+    .section h2 {
+      font-size: 32px;
+      margin-bottom: 15px;
+    }
+
+    .section p {
+      line-height: 1.6;
+      font-size: 16px;
+    }
+
+    /* Image + box overlap container */
+    .image-text-box {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin-bottom: 80px;
+    }
+
+    .image-text-box img {
+      width: 48%;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .text-box {
+      width: 50%;
+      background: #fff;
+      padding: 25px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      border-radius: 12px;
+      margin-left: -80px; /* Overlap effect */
+      position: relative;
+      z-index: 2;
+    }
+
+    .features {
+      display: flex;
+      justify-content: space-between;
+      margin: 50px 0;
+      flex-wrap: wrap;
+    }
+
+    .feature-box {
+      width: 30%;
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      text-align: center;
+    }
+
+    .feature-box h3 {
+      font-size: 18px;
+      margin: 10px 0;
+    }
+
+    .plan-visit {
+      background: #fff8f5;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      margin-top: 60px;
+      text-align: center;
+    }
+
+    .plan-visit button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      background: #ff6f61;
+      color: #fff;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .plan-visit button:hover {
+      background: #e85b4f;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .image-text-box {
+        flex-direction: column;
+      }
+      .image-text-box img,
+      .text-box {
+        width: 100%;
+        margin: 0;
+      }
+      .text-box {
+        margin-top: -40px; /* small overlap in mobile */
+      }
+      .feature-box {
+        width: 100%;
+        margin-bottom: 20px;
+      }
+    }
+  

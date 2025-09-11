@@ -1,0 +1,85 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  height: 100vh;
+  background: url("gift2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+
+.container {
+  background: #fff;
+  color: #853d7f;
+  margin: 5rem;
+  padding: 2.5rem;
+  border-radius: 15px;
+  width: 100%;
+  max-width: 375px;
+  text-align: center;
+}
+
+a
+{
+    color: #230a31;
+    margin: 4px;
+}
+
+.login-form h2 {
+  margin-bottom: 1.8rem;
+  font-size: 1.7rem;
+ 
+}
+
+.login-form p {
+  margin-bottom: 1.5rem;
+  
+}
+
+.input2 {
+  width: 90%;
+  padding: 12px;
+  margin-bottom: 22px;
+  border: 1px solid #da7bff;
+  font-weight: 350;
+  font-size: 0.9rem;
+  border-radius: 15px;
+  outline: none;
+  transition: 0.3s;
+  font-weight: bold;
+}
+
+.input2:hover {
+  
+  border: 1px solid #3f1649;
+   color: #080808;
+}
+
+.btn {
+  width: 97%;
+  padding: 14px;
+  background: linear-gradient(to right, #de8ff7, #080808);
+  color: white;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  border: none;
+   font-size: 0.9rem;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-bottom: 5px;
+}
+
+.btn:hover {
+ background: linear-gradient(to right, #080808, #de8ff7);
+ font-size: 1rem;
+}
+
+.register-link
+{
+  color: #311f35;
+  margin-bottom: 5px;
+} 
