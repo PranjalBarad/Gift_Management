@@ -21,9 +21,9 @@
       <div class="footer-section">
         <h2>Quick Links</h3>
         <a href="../../project/homePage/home.php">Home</a>
-        <a href="#">About Us</a>
+        <a href="../../project/aboutusPage/aboutus.php">About Us</a>
         <a href="#">Shop</a>
-        <a href="#">Contact Us</a>
+        <a href="../../project/contactPage/contactus.php">Contact Us</a>
         <a href="#">Terms & Conditions</a>
         <a href="#">Privacy Policy</a>
         <a href="#">Shipping & Returns</a>
