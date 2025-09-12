@@ -11,7 +11,7 @@
 
   <footer class="footer">
       <div class="footer-section footer_left">
-        <h2>WowBox</h3>
+        <h2>WowBox</h2>
         <p>
           At WowBox, every gift tells a story. We believe in creating unforgettable moments through thoughtfully designed surprises, crafted with love, elegance, and purpose.
         </p>
@@ -19,7 +19,7 @@
 
       <!-- Middle Section -->
       <div class="footer-section">
-        <h2>Quick Links</h3>
+        <h2>Quick Links</h2>
         <a href="../../project/homePage/home.php">Home</a>
         <a href="../../project/aboutusPage/aboutus.php">About Us</a>
         <a href="#">Shop</a>
@@ -31,7 +31,7 @@
 
       <!-- Right Section -->
       <div class="footer-section footer_right">
-        <h2>Contact</h3>
+        <h2>Contact</h2>
         <p>
           Have a question or need support? Our team is here to assist you promptly and professionally. 
           Feel free to contact us anytime — we're here to make your experience effortless and joyful.
