@@ -39,7 +39,8 @@ body {
   gap: 12px;
   flex: 1;
   flex-direction: column;
-  max-width: 350px
+  max-width: 350px;
+  z-index: 1000;
 }
 
 

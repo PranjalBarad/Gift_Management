@@ -17,7 +17,7 @@ require_once('../headerPage/header.php');
   <section class="contact-header">
     <div class="contact-left">
       <h1>Contact Us</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
+      <p>We'd love to hear from you! Wheather you have question, feedback, or just want to connect, our team is always here to help.</p>
     </div>
     <div class="contact-right">
       <!-- phone.png -->
@@ -27,16 +27,16 @@ require_once('../headerPage/header.php');
 
   <!-- Contact Information -->
   <section class="contact-info">
-    <h2>Contact Information</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis.</p>
+    <h2>Let's connect !</h2>
+    <p>Have a question or idea..? Reach out to us. contact us anytime, Your questions matter and we'll be happy to help. </p>
     <div class="info-box">
       <div>
         <i class="fa-solid fa-phone fa-bounce"></i>
-        <p>(+654) 6544 55</p>
+        <p>(+91) 9624051234</p>
       </div>
       <div>
         <i class="fa fa-envelope"></i>
-        <p>mail@ktchn.com</p>
+        <p>wowbox@gmail.com</p>
       </div>
       <div>
         <i class="fa-solid fa-location-dot"></i>
@@ -49,10 +49,10 @@ require_once('../headerPage/header.php');
   <section class="contact-form">
     <div class="contact-form-img">
     <h2>Get In Touch !</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis.</p>
+    <p>Fill out the form and our team will respond to you as quickly as possible.</p>
     <form>
-      <input type="email" placeholder="Email" required>
       <input type="text" placeholder="Name" required>
+      <input type="email" placeholder="Email" required>
       <textarea placeholder="Message" required></textarea>
       <button type="submit">Submit</button>
     </form>
