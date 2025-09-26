@@ -48,7 +48,8 @@ body {
   top: 0;
   width: 300px;
   height: 30rem;
-  border: 2px solid rgb(73, 56, 41);
+  /* rgb(73, 56, 41) */
+  border: 2px solid #594266;;
   border-radius: 140px 140px 0 0 ;
 }
 
@@ -67,7 +68,7 @@ body {
 
 .contact-info h2 {
   margin-bottom: 10px;
-  color: #685b4c;
+  color: #594266;
   font-weight: bold;
 }
 
@@ -84,7 +85,7 @@ body {
 
 .info-box i {
   font-size: 24px;
-  color: #807363;
+  color: #594266;
   margin-bottom: 5px;
 }
 

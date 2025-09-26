@@ -142,6 +142,8 @@
     .card-img
     {
         height: 20.5rem;
+        width: 17.8rem;
+        border-radius: 15px;
     }
     /* .card.img > img:hover{
         transform: scale(1.1);

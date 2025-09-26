@@ -9,9 +9,11 @@
 }
 body {
   color: #784d91;
-  line-height: 1.6;
+  /* line-height: 1.6; */
 }
-
+.aboutus_div{
+   line-height: 1.6;
+}
 .aboutus_div h2 {
   font-size: 30px;
   margin-bottom: 2rem;

@@ -1,0 +1,401 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: mulish;
+    text-decoration: none;
+}
+.shop-section {
+  padding: 109px 70px;
+}
+
+.breadcrumb
+{
+  font-size: 17px;
+  margin-bottom: 10px;
+}
+.breadcrumb a {
+  font-weight: 800;
+  color: #333;
+  text-decoration: none;
+}
+
+.breadcrumb span {
+  color: #777;   /* lighter gray for Shop */
+}
+
+.shop-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.shop-header p{
+  font-size: 15px;
+  /* margin-bottom: 3px; */
+  color: #777;
+}
+.shop-header select {
+  padding: 8px;
+  border-radius: 5px;
+  font-size: 15px;
+  padding: 5px 20px
+}
+
+.product-grid {
+  display: flex;          
+  flex-wrap: wrap;    
+  justify-content: center;    
+  gap: 18px;
+}
+
+.product {
+  width: 18rem;
+  height: 29rem;
+  overflow: hidden;
+  border: 1px solid #dfdddd;
+  border-radius: 10px;
+  background: #fff;
+  text-align: center;
+  margin-bottom: 80px;
+
+}
+
+
+.product:hover {
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  
+}
+
+.product-img {
+  position: relative;
+}
+
+.product img {
+  width: 18rem;
+  height: 24rem;
+  border-radius: 10px;
+  display: block;
+  margin-bottom: 18px;
+  transition: 0.5s ease;
+}
+.product img:hover{
+transform: scale(1.04);
+}
+.hover-icons {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.product:hover .hover-icons {
+  opacity: 1;
+}
+
+.hover-icons span {
+  background: rgb(249, 243, 255);
+  padding: 8px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 16px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.new-price {
+  color: #d43f3a;
+  font-weight: bold;
+  font-size: 18px;
+  margin-top: 3px;
+}
+
+
+
+/* ===== Modal Styles ===== */
+/* .modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
+}
+
+.modal-content {
+  background: #fff;
+  margin: 8% auto;
+  padding: 20px;
+  width: 60%;
+  border-radius: 10px;
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  top: 10px; right: 20px;
+  font-size: 28px;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+}
+
+.modal-body {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.modal-img img {
+  width: 250px;
+  height: auto;
+  border-radius: 10px;
+}
+
+.modal-details {
+  flex: 1;
+}
+
+.modal-details h2 {
+  margin-bottom: 10px;
+}
+
+.modal-price {
+  color: #d43f3a;
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.modal-details button {
+  padding: 10px 20px;
+  background: #d43f3a;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.modal-details button:hover {
+  background: #b6322f;
+} */
+
+/* Modal Styles */
+/* filepath: c:\xampp\htdocs\project\shopPage\shop2.css */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background: rgba(0,0,0,0.5);
+}
+ .modal-body
+ {
+ display: flex;
+  gap: 32px;
+  align-items: center;
+  min-height: 340px;   /* Increase modal body height */
+  height: 400px;  
+ }
+.modal-content {
+  background: #fff;
+  margin: 5% auto;
+  padding: 30px 30px;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 700px;
+  position: relative;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+}
+
+.close, #modalClose {
+  color: #333;
+  position: absolute;
+  top: 18px;
+  right: 24px;
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.close:hover, #modalClose:hover {
+  color: #e74c3c;
+}
+#modalImg {
+  width: 100%;
+  height: 100%;
+  margin: 5px 0;
+  align-items: center;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  display: block;
+}
+.modal-left {
+  flex: 0 0 280px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+
+.modal-price, #modalPrice {
+  font-size: 1.2rem;
+  color: #e67e22;
+  margin-bottom: 8px;
+}
+
+.modal-original-price {
+  text-decoration: line-through;
+  color: #aaa;
+  font-size: 1rem;
+  margin-left: 8px;
+}
+
+#modalClose
+{
+  position: absolute; 
+  top:10px; 
+  right:15px; 
+  font-size:24px; 
+  cursor:pointer;
+  color: #333;
+}
+
+
+.modal-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.modal-right h3,
+#modalTitle {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.modal-right p {
+  margin: 0;
+}
+
+#modalPrice,
+.modal-price {
+  font-size: 1.2rem;
+  color: #e67e22;
+  font-weight: bold;
+}
+
+#modalOriginalPrice,
+.modal-original-price {
+  text-decoration: line-through;
+  color: #aaa;
+  font-size: 1.1rem;
+  margin-left: 12px;
+}
+
+#modalAdd,
+.add-cart-btn {
+  background: #27ae60;
+  color: #fff;
+  border: none;
+  padding: 6px 0;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1.15rem;
+  font-weight: bold;
+  margin: 18px 0 10px 0;
+  width: 70%;
+  align-items: center;
+  letter-spacing: 1px;
+  transition: background 0.2s;
+  box-shadow: 0 2px 8px rgba(39,174,96,0.08);
+}
+#modalAdd:hover,
+.add-cart-btn:hover {
+  background: #219150;
+}
+
+#modalDesc,
+.modal-desc,
+#modalIncludes,
+.modal-includes {
+  font-size: 1rem;
+  color: #333;
+}
+#cartToast {
+  display: none;
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #27ae60;
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-size: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  z-index: 2000;
+}
+/* modal */
+/* .modal {
+  display: none;
+  position: fixed;   
+  top: 100px;        
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 600px;
+  padding: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  z-index: 1000;
+}
+
+.modal.open {
+  display: block;
+}
+#modalClose
+{
+  position: absolute; 
+  top:10px; 
+  right:15px; 
+  font-size:24px; 
+  cursor:pointer;
+  color: #333;
+}
+.modal-content {
+  background:#fff; 
+  padding:20px; 
+  border-radius:8px; 
+}
+.modal-body {
+  display:flex; 
+
+  gap:20px;
+}
+.modal-left img {
+  width:100%; 
+  max-width:300px;
+}
+.modal-right {
+  flex:1000;
+color: #000;
+}
+
+/* toast */
+

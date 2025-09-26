@@ -17,7 +17,7 @@ require_once('../../project/headerPage/header.php');
                 <div class="hero-head">Wrap Up Some Love!</div>
                 <div class="hero-para">Fill it with their favorites, add a heartfelt note  because when it comes from the heart, every gift becomes unforgettable.</div>
 
-            <button class="hero-btn" type="submit">SHOP NOW</button>
+            <a href="../../project/shopPage/shop2.php"><button class="hero-btn" type="submit">SHOP NOW</button></a>
             </div>
         </section>
 
@@ -32,7 +32,7 @@ require_once('../../project/headerPage/header.php');
      
             <div class="categories-cards">
                 <div class="card card-1">
-                    <img src="../../project/photos/for her.png" class="card-img" alt="">
+                    <img src="../../project/photos/forher1.jpg" class="card-img" alt="">
                 <div class="card-text">FOR HER</div>
                 </div>
 
@@ -42,22 +42,22 @@ require_once('../../project/headerPage/header.php');
                 </div>
 
                 <div class="card card-3">
-                <img src="../../project/photos/for kids.png" class="card-img" alt="">
+                <img src="../../project/photos/kids.jpg" class="card-img" alt="">
                 <div class="card-text">FOR KIDS</div>
                 </div>
 
                 <div class="card card-4">
-                <img src="../../project/photos/birthday.png" class="card-img" alt="">
+                <img src="../../project/photos/birth2.jpg" class="card-img" alt="">
                 <div class="card-text">BIRTHDAY</div>
                 </div>
 
                 <div class="card card-5">
-                <img src="../../project/photos/gournment.png" class="card-img" alt="">
+                <img src="../../project/photos/wedd3.jpg" class="card-img" alt="">
                 <div class="card-text">WEDDING</div>
                 </div>
 
                 <div class="card card-6">
-                <img src="../../project/photos/aniversery.png" class="card-img" alt="">
+                <img src="../../project/photos/forher2.png" class="card-img" alt="">
                 <div class="card-text">ANNIVERSARY</div>
                 </div>
             </div>
