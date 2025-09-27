@@ -1,4 +1,3 @@
-
 <?php
 require_once('../../project/headerPage/header.php');
 ?>
@@ -33,9 +32,9 @@ require_once('../../project/headerPage/header.php');
 
     <div class="product-grid">
       <!-- Product 1 -->
-      <div class="product wedding" data-price="1999">
+      <div class="product forhim" data-price="1999">
         <div class="product-img">
-          <img src="../../project/photos/FOR HIM 1.png" alt="Classic Luxury Box">
+          <img src="../../project/photos/FORHIM1.png"  alt="Classic Luxury Box">
           <div class="hover-icons">
             <span class="cart-btn">🛒</span>
             <span class="view-btn">🔍</span>
@@ -46,9 +45,9 @@ require_once('../../project/headerPage/header.php');
       </div>
 
       <!-- Product 2 -->
-      <div class="product birthday" data-price="1399">
+      <div class="product anniversary" data-price="1399">
         <div class="product-img">
-          <img src="../../project/photos/forher2.png" alt="Shubh Utsav Box">
+          <img src="../../project/photos/forher2.png" alt="anniversary">
           <div class="hover-icons">
             <span class="cart-btn">🛒</span>
             <span class="view-btn">🔍</span>
@@ -59,9 +58,9 @@ require_once('../../project/headerPage/header.php');
       </div>
 
       <!-- Product 3 -->
-      <div class="product anniversary" data-price="1299">
+      <div class="product birthday" data-price="1299">
         <div class="product-img">
-          <img src="../../project/photos/bday2.jpg" alt="Flavors of Diwali">
+          <img src="../../project/photos/bday2.jpg" alt="birthday">
           <div class="hover-icons">
             <span class="cart-btn">🛒</span>
             <span class="view-btn">🔍</span>
@@ -74,6 +73,19 @@ require_once('../../project/headerPage/header.php');
       <!-- Product 4 -->
       <div class="product forher" data-price="2399">
         <div class="product-img">
+          <img src="../../project/photos/forher1.jpg" alt="Lavender Care Box">
+          <div class="hover-icons">
+            <span class="cart-btn">🛒</span>
+            <span class="view-btn">🔍</span>
+          </div>
+        </div>
+        <h3>Lavender Care Box</h3>
+        <p class="new-price">₹2399</p>
+      </div>
+
+      <!-- Product 5 -->
+      <div class="product forhim" data-price="2099">
+        <div class="product-img">
           <img src="../../project/photos/men.png" alt="Happiness Basket">
           <div class="hover-icons">
             <span class="cart-btn">🛒</span>
@@ -81,24 +93,11 @@ require_once('../../project/headerPage/header.php');
           </div>
         </div>
         <h3>Midnight Elegance Box</h3>
-        <p class="new-price">₹2399</p>
-      </div>
-
-      <!-- Product 5 -->
-      <div class="product wedding" data-price="899">
-        <div class="product-img">
-          <img src="../../project/photos/joyful.png" alt="Joyful Munch">
-          <div class="hover-icons">
-            <span class="cart-btn">🛒</span>
-            <span class="view-btn">🔍</span>
-          </div>
-        </div>
-        <h3>The Joyful Munch</h3>
-        <p class="new-price">₹899</p>
+        <p class="new-price">₹2099</p>
       </div>
 
       <!-- Product 6 -->
-      <div class="product forkids" data-price="2399">
+      <div class="product forkids" data-price="1099">
         <div class="product-img">
           <img src="../../project/photos/happy.png" alt="Happiness Basket">
           <div class="hover-icons">
@@ -107,7 +106,7 @@ require_once('../../project/headerPage/header.php');
           </div>
         </div>
         <h3>Happiness Basket</h3>
-        <p class="new-price">₹2399</p>
+        <p class="new-price">₹1099</p>
       </div>
     </div>
   </section>
@@ -119,7 +118,7 @@ require_once('../../project/headerPage/header.php');
     <span id="modalClose">&times;</span>
     <div class="modal-body">
       <div class="modal-left">
-        <img id="modalImg" src="" alt="Product Image" />
+        <img id="modalImg" src="" class="cart-item-img" alt="Product Image" />
       </div>
       <div class="modal-right">
         <h3 id="modalTitle"></h3>

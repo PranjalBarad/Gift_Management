@@ -53,7 +53,7 @@ if (isset($_POST['update_qty'])) {
 <head>
     <meta charset="UTF-8">
     <title>Your Cart</title>
-    <link rel="stylesheet" href="cart.css">
+    <link rel="stylesheet" href="../../project/cartPage/cart.css">
 </head>
 <body>
 <div class="cart-section">
@@ -80,6 +80,7 @@ if (isset($_POST['update_qty'])) {
                         <div class="cart-item-name"><?php echo htmlspecialchars($item['name']); ?></div>
                         
                         <?php if (!empty($item['includes'])): ?>
+
                         <ul class="cart-item-includes">
                             <?php foreach (explode('|', $item['includes']) as $inc): ?>
                                 <li><?php echo htmlspecialchars($inc); ?></li>
@@ -99,7 +100,7 @@ if (isset($_POST['update_qty'])) {
                     </div>
                 </div>
                 <?php endforeach; ?>
-                <a href="../shopPage/shop2.php" class="continue-btn">← CONTINUE SHOPPING</a>
+                <a href="../shopPage/shop2.php" class="continue-btn"> <span style="padding: 0 11px;;">←</span>Continue Shopping</a>
             </div>
             <div class="cart-summary">
                 <div class="cart-summary-title">Order Summary</div>

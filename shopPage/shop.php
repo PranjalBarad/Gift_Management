@@ -35,7 +35,7 @@ require_once('../../project/headerPage/header.php');
       <!-- Product 1 -->
       <div class="product wedding"  data-price="899" >
         <div class="product-img">
-          <img src="../../project/photos/FOR HIM 1.png" alt="Joyful Munch">
+          <img src="../../project/photos/FORHIM1.png" alt="Joyful Munch">
           <div class="hover-icons">
             <span onclick="addToCart('The Joyful Munch')">🛒</span>
             <span>🔍</span>

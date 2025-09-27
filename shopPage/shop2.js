@@ -21,7 +21,7 @@ const products = [
   {
     name: "Classic Luxury Box",
     price: "₹1999",
-    img: "../../project/photos/FOR HIM 1.png",
+    img: "../../project/photos/FORHIM1.png",
     desc: "A bold mix of luxury and charm - the Luxe Elegance Box is the perfect hamper for anyone who loves premium surprises.",
     includes: `
       <strong>Includes:</strong>
@@ -64,8 +64,24 @@ const products = [
     `
   },
   {
-    name: "Midnight Elegance Box",
+    name: "Lavender Care Box",
     price: "₹2399",
+    img: "../../project/photos/forher1.jpg",
+    desc: "A soothing, heartwarming gift set filled with love, positivity, and relaxation essentials.",
+    includes: `
+      <strong>Includes:</strong>
+      <ul>
+        <li>1 x Cozy Fluffy Socks</li>
+        <li>1 x Aromatherapy Candle</li>
+        <li>1 x Bath Bomb</li>
+        <li>1 x Satin Scrunchie</li>
+        <li>1 x Greeting Card</li>
+      </ul>
+    `
+  },
+  {
+    name: "Midnight Elegance Box",
+    price: "₹2099",
     img: "../../project/photos/men.png",
     desc: "Dark, classy, and full of charm - the Midnight Elegance Box is designed for those who love sophistication.",
     includes: `
@@ -78,34 +94,35 @@ const products = [
     `
   },
   {
-    name: "The Joyful Munch",
-    price: "₹899",
-    img: "../../project/photos/joyful.png",
-    desc: "Bring a burst of joy to your celebrations, a delightful assortment of sweet treats crafted to satisfy every craving.",
-    includes: `
-      <strong>Hamper Includes</strong>
-      <ul>
-        <li>1 X Personalized White Photo Frame</li>
-        <li>1 X Snackible Ragi Chips</li>
-        <li>1 X 4 Metal Tealight Candle</li>
-        <li>1 X Happy Diwali Card</li>
-      </ul>
-    `
-  },
-  {
     name: "Happiness Basket",
-    price: "₹2399",
+    price: "₹1099",
     img: "../../project/photos/happy.png",
     desc: "A basket full of happiness for kids. Chocolates and a coloring book inside.",
     includes: `
       <strong>Includes:</strong>
       <ul>
-        <li>Chocolates</li>
-        <li>Coloring Book</li>
-        <li>2 x beautiful Nail polish</li>
-        <li>1 x Body Care Set (Soap / Gel / Lotion)</li>
-        <li>1 x Assorted Chocolates</li>
-        <li>1 x Cute Purple Scrunchie</li>
+        <li>1 x Bournville Dark Chocolate (50%)</li>
+        <li>1 x The Body Shop Strawberry Shower Gel</li>
+        <li>1 x RENÉE Bloom Perfume</li>
+        <li>1 x Cute Smiley Plant Pot with Faux Grass</li>
+        <li>2 x Crochet Tulip Flowers</li>
+      </ul>
+    `
+  },
+  {
+    name: "Tulip Strawberry Bliss Box",
+    price: "₹1799",
+    img: "../../project/photos/tulip_bliss.png",
+    desc: "A delightful hamper with floral, chocolate, skincare, and a cute plant pot for a perfect gift.",
+    includes: `
+      <strong>Includes:</strong>
+      <ul>
+        <li>1 x Cadbury Bournville Classic Dark Chocolate (50%)</li>
+        <li>1 x The Body Shop Strawberry Shower Gel</li>
+        <li>1 x RENÉE Bloom Perfume</li>
+        <li>1 x Cute Smiley Plant Pot with Faux Grass</li>
+        <li>1 x Skincare / Sheet Mask Pack</li>
+        <li>2 x Crochet Tulip Flowers</li>
       </ul>
     `
   }
@@ -131,37 +148,60 @@ document.getElementById('modalClose').onclick = function() {
   document.getElementById('productModal').style.display = 'none';
 };
 
-
-document.getElementById('modalAdd').onclick = function() {
-  document.getElementById('cartToast').style.display = 'block';
+// Show toast message
+function showCartToast() {
+  const cartToast = document.getElementById('cartToast');
+  cartToast.style.display = 'block';
   setTimeout(() => {
-    document.getElementById('cartToast').style.display = 'none';
+    cartToast.style.display = 'none';
   }, 2000);
-};
+}
 
+// Helper: Send product to cart via AJAX
+function addToCartAjax(data) {
+  fetch('../../project/cartPage/cart.php', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: new URLSearchParams(data).toString()
+  })
+  .then(response => response.ok ? showCartToast() : alert('Error adding to cart'));
+}
 
+// 🛒 button logic
+document.querySelectorAll('.cart-btn').forEach(btn => {
+  btn.addEventListener('click', function() {
+    const productElem = btn.closest('.product');
+    const title = productElem.querySelector('h3').textContent;
+    const price = productElem.querySelector('.new-price').textContent;
+    const imgElem = productElem.querySelector('img');
+    const img = imgElem ? imgElem.src : '';
 
-// Add this inside your modalAdd click handler in shop2.js
-document.getElementById('modalAdd').onclick = function() {
-  const name = document.getElementById('modalTitle').textContent;
-  const price = document.getElementById('modalPrice').textContent;
-  const img = document.getElementById('modalImg').src;
-  const desc = document.getElementById('modalDesc').textContent;
-  // For includes, join list items with "|" for PHP to split
-  const includes = Array.from(document.querySelectorAll('#modalIncludes ul li')).map(li => li.textContent).join('|');
+    addToCartAjax({
+      add_to_cart: 1,
+      name: title,
+      price: price,
+      img: img
+    });
+  });
+});
 
-  const form = document.createElement('form');
-  form.method = 'POST';
-  form.action = '../../project/cartPage/cart.php';
+// Modal "ADD TO CART" button logic
+const modalAddBtn = document.getElementById('modalAdd');
+if (modalAddBtn) {
+  modalAddBtn.addEventListener('click', function() {
+    const title = document.getElementById('modalTitle').textContent;
+    const price = document.getElementById('modalPrice').textContent;
+    const img = document.getElementById('modalImg').src;
+    const desc = document.getElementById('modalDesc').textContent;
+    const includes = document.getElementById('modalIncludes').textContent;
 
-  form.innerHTML = `
-    <input type="hidden" name="add_to_cart" value="1">
-    <input type="hidden" name="name" value="${name}">
-    <input type="hidden" name="price" value="${price}">
-    <input type="hidden" name="img" value="${img}">
-    <input type="hidden" name="desc" value="${desc}">
-    <input type="hidden" name="includes" value="${includes}">
-  `;
-  document.body.appendChild(form);
-  form.submit();
-};
+    addToCartAjax({
+      add_to_cart: 1,
+      name: title,
+      price: price,
+      img: img,
+      desc: desc,
+      includes: includes
+    });
+  });
+}

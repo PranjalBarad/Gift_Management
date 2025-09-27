@@ -32,22 +32,22 @@ require_once('../../project/headerPage/header.php');
      
             <div class="categories-cards">
                 <div class="card card-1">
+                    <img src="../../project/photos/FORHIM1.png" class="card-img" alt="">
+                <div class="card-text">FOR HIM</div>
+                </div>
+
+                <div class="card card-2">
+                    <img src="../../project/photos/happy.png" class="card-img" alt="">
+                <div class="card-text">FOR KIDS</div>
+                </div>
+
+                <div class="card card-3">
                     <img src="../../project/photos/forher1.jpg" class="card-img" alt="">
                 <div class="card-text">FOR HER</div>
                 </div>
 
-                <div class="card card-2">
-                    <img src="../../project/photos/FOR HIM 1.png" class="card-img" alt="">
-                <div class="card-text">FOR HIM</div>
-                </div>
-
-                <div class="card card-3">
-                <img src="../../project/photos/kids.jpg" class="card-img" alt="">
-                <div class="card-text">FOR KIDS</div>
-                </div>
-
                 <div class="card card-4">
-                <img src="../../project/photos/birth2.jpg" class="card-img" alt="">
+                <img src="../../project/photos/bday2.jpg" class="card-img" alt="">
                 <div class="card-text">BIRTHDAY</div>
                 </div>
 
