@@ -1,0 +1,115 @@
+body {
+    background: var(--background);
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+.order-card {
+    background: var(--surface);
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    padding: 140px 80px;
+}
+.order-header {
+    border-bottom: 1px solid rgba(47,65,86,0.12);
+    padding-bottom: 12px;
+    margin-bottom: 18px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+.order-header .order-id,
+.order-header .order-date {
+    color: var(--text-muted);
+    font-size: 1em;
+}
+.order-header .order-date {
+    margin-left: 24px;
+}
+.order-header .order-status {
+    color: var(--primary);
+    font-weight: 600;
+    margin-left: 24px;
+    font-size: 1em;
+}
+.order-list-item {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgba(47,65,86,0.08);
+    padding: 20px 0;
+    justify-content: space-between;
+}
+.order-list-item:last-child {
+    border-bottom: none;
+}
+.order-product-info {
+    display: flex;
+    align-items: center;
+    width: 270px; /* Fixed width for left column */
+}
+.order-product-img {
+    width: 70px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-right: 18px;
+    background: var(--surface-soft);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+    color: rgba(47,65,86,0.3);
+}
+.order-product-details {
+    display: flex;
+    flex-direction: column;
+}
+.order-product-name {
+    font-weight: 600;
+    font-size: 1.1em;
+    margin-bottom: 4px;
+    color: var(--header-bg);
+}
+.order-product-qty {
+    color: var(--text-muted);
+    font-size: 0.97em;
+}
+.order-product-status {
+    width: 140px; /* Fixed width for center column */
+    text-align: center;
+    color: var(--text-muted);
+    font-weight: 600;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.order-product-price {
+    width: 90px; /* Fixed width for right column */
+    text-align: right;
+    font-weight: 600;
+    font-size: 1.1em;
+    color: var(--header-bg);
+}
+.order-total-row {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 18px;
+}
+.order-total-label {
+    color: var(--text-muted);
+    font-size: 1.17rem;
+    margin-right: 15px;
+}
+.order-total-value {
+    font-size: 1.3em;
+    font-weight: 700;
+    color: var(--header-bg);
+}
+.order-delivery {
+    margin-top: 18px;
+    color: var(--text-muted);
+    font-size: 1em;
+    text-align: right;
+}

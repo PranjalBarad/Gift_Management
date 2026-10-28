@@ -1,3 +1,4 @@
+
 function sortProducts(category) {
   let products = document.querySelectorAll('.product');
   let count = 0;
@@ -14,137 +15,112 @@ function sortProducts(category) {
   document.querySelector(".shop-header p").textContent = `Showing ${count} results`;
 }
 
-sortProducts('all');
+
+// Auto-sort based on ?category= in URL
+function getQueryParam(param) {
+  const urlParams = new URLSearchParams(window.location.search);
+  return urlParams.get(param);
+}
+
+function autoSortFromQuery() {
+  const category = getQueryParam('category');
+  if (!category) {
+    sortProducts('all');
+    return;
+  }
+  // if the select exists and has an option for this category, set it
+  const sel = document.getElementById('sortSelect');
+  if (sel) {
+    // try to set value, if option not present we'll still call sortProducts
+    try { sel.value = category; } catch (e) { }
+  }
+  sortProducts(category);
+}
+
+// When the user changes the select, update the URL so server-side filtering can occur.
+function changeCategory(category) {
+  // update query param and navigate so server-side will return filtered set.
+  const url = new URL(window.location.href);
+  if (!category || category === 'all') {
+    url.searchParams.delete('category');
+  } else {
+    url.searchParams.set('category', category);
+  }
+  // Navigate to the updated URL. This reload will trigger server-side filtering
+  // while autoSortFromQuery will still run to set the client-side state.
+  window.location.href = url.toString();
+}
+
+window.addEventListener('DOMContentLoaded', autoSortFromQuery);
 
 //model
-const products = [
-  {
-    name: "Classic Luxury Box",
-    price: "₹1999",
-    img: "../../project/photos/FORHIM1.png",
-    desc: "A bold mix of luxury and charm - the Luxe Elegance Box is the perfect hamper for anyone who loves premium surprises.",
-    includes: `
-      <strong>Includes:</strong>
-      <ul>
-        <li>1 x Premium Perfume Bottle</li>
-        <li>1 x Luxury Dark Chocolate Bar</li>
-        <li>1 x Stylish Wallet / Accessory</li>
-      </ul>
-    `
-  },
-  {
-    name: "Pookie Basket",
-    price: "₹1399",
-    img: "../../project/photos/forher2.png",
-    desc: "a romantic hamper filled with soft, sweet, and thoughtful gifts.",
-    includes: `
-      <strong>Includes:</strong>
-      <ul>
-        <li>2 x Crochet Tulip</li>
-        <li>1 x Cadbury Bournville</li>
-        <li>1 x Tonymoly Sheet Mask Pomegranate</li>
-        <li>1 x Tonymoly Sheet Mask Avocado</li>
-        <li>1 x The Body Shop Strawberry Shower Gel</li>
-      </ul>
-    `
-  },
-  {
-    name: "Birthday Bliss Hamper",
-    price: "₹1299",
-    img: "../../project/photos/bday2.jpg",
-    desc: "Make birthdays unforgettable with the Birthday Bliss Hamper - fun and full of surprises.",
-    includes: `
-      <strong>Includes:</strong>
-      <ul>
-        <li>2 x beautiful Nail polish</li>
-        <li>1 x Body Care Set (Soap / Gel / Lotion)</li>
-        <li>1 x Assorted Chocolates</li>
-        <li>1 x Cute Purple Scrunchie</li>
-      </ul>
-    `
-  },
-  {
-    name: "Lavender Care Box",
-    price: "₹2399",
-    img: "../../project/photos/forher1.jpg",
-    desc: "A soothing, heartwarming gift set filled with love, positivity, and relaxation essentials.",
-    includes: `
-      <strong>Includes:</strong>
-      <ul>
-        <li>1 x Cozy Fluffy Socks</li>
-        <li>1 x Aromatherapy Candle</li>
-        <li>1 x Bath Bomb</li>
-        <li>1 x Satin Scrunchie</li>
-        <li>1 x Greeting Card</li>
-      </ul>
-    `
-  },
-  {
-    name: "Midnight Elegance Box",
-    price: "₹2099",
-    img: "../../project/photos/men.png",
-    desc: "Dark, classy, and full of charm - the Midnight Elegance Box is designed for those who love sophistication.",
-    includes: `
-      <strong>Includes:</strong>
-      <ul>
-        <li>1 x Engraved Tumbler / Premium Mug</li>
-        <li>1 x Stylish Watch / Accessory</li>
-        <li>1 x Dark Chocolate Pack</li>
-      </ul>
-    `
-  },
-  {
-    name: "Happiness Basket",
-    price: "₹1099",
-    img: "../../project/photos/happy.png",
-    desc: "A basket full of happiness for kids. Chocolates and a coloring book inside.",
-    includes: `
-      <strong>Includes:</strong>
-      <ul>
-        <li>1 x Bournville Dark Chocolate (50%)</li>
-        <li>1 x The Body Shop Strawberry Shower Gel</li>
-        <li>1 x RENÉE Bloom Perfume</li>
-        <li>1 x Cute Smiley Plant Pot with Faux Grass</li>
-        <li>2 x Crochet Tulip Flowers</li>
-      </ul>
-    `
-  },
-  {
-    name: "Tulip Strawberry Bliss Box",
-    price: "₹1799",
-    img: "../../project/photos/tulip_bliss.png",
-    desc: "A delightful hamper with floral, chocolate, skincare, and a cute plant pot for a perfect gift.",
-    includes: `
-      <strong>Includes:</strong>
-      <ul>
-        <li>1 x Cadbury Bournville Classic Dark Chocolate (50%)</li>
-        <li>1 x The Body Shop Strawberry Shower Gel</li>
-        <li>1 x RENÉE Bloom Perfume</li>
-        <li>1 x Cute Smiley Plant Pot with Faux Grass</li>
-        <li>1 x Skincare / Sheet Mask Pack</li>
-        <li>2 x Crochet Tulip Flowers</li>
-      </ul>
-    `
-  }
-];
+// Use server-provided `products` array when available. The server prints a `products` JS array in the page.
+// If it's not present for some reason, fallback to an empty array to avoid errors.
+var products = (typeof products !== 'undefined' && Array.isArray(products)) ? products : [];
 
-// Attach modal open logic to each view-btn
-document.querySelectorAll('.view-btn').forEach((btn, idx) => {
-  btn.addEventListener('click', function() {
-    const p = products[idx];
+// Attach modal open logic to each view-btn. Use DOM data-index to map to server `products` array.
+document.querySelectorAll('.view-btn').forEach((btn) => {
+  btn.addEventListener('click', function (e) {
+    // Locate product container parent and get data-index
+    const productEl = e.target.closest('.product');
+    if (!productEl) return;
+    const idx = parseInt(productEl.getAttribute('data-index'), 10);
+    const p = products[idx] || null;
+    if (!p) {
+      // as a fallback, try to assemble from DOM
+      const imgEl = productEl.querySelector('img');
+      const title = productEl.querySelector('h3') ? productEl.querySelector('h3').textContent.trim() : '';
+      const price = productEl.getAttribute('data-price') || '';
+      document.getElementById('modalImg').src = imgEl ? imgEl.src : '';
+      document.getElementById('modalImg').alt = title;
+      document.getElementById('modalTitle').textContent = title;
+      document.getElementById('modalPrice').textContent = price;
+      document.getElementById('modalDesc').textContent = productEl.getAttribute('data-desc') || '';
+      document.getElementById('modalIncludes').innerHTML = '';
+      document.getElementById('productModal').style.display = 'block';
+      return;
+    }
     document.getElementById('modalImg').src = p.img;
     document.getElementById('modalImg').alt = p.name;
     document.getElementById('modalTitle').textContent = p.name;
     document.getElementById('modalPrice').textContent = p.price;
-    // document.getElementById('modalOriginalPrice').textContent = p.originalPrice;
+    // store a raw numeric price (from data-price) so modal add uses an unformatted value
+    try {
+      document.getElementById('modalPrice').dataset.raw = productEl.getAttribute('data-price') || p.price.replace(/[^0-9.]/g, '');
+    } catch (e) { }
     document.getElementById('modalDesc').textContent = p.desc;
-    document.getElementById('modalIncludes').innerHTML = p.includes;
+    // Render includes as a list if it's comma-separated, otherwise preserve existing HTML
+    document.getElementById('modalIncludes').innerHTML = renderIncludesToHTML(p.includes || '');
     document.getElementById('productModal').style.display = 'block';
   });
 });
 
+// Escape text to HTML
+function escapeHtml(unsafe) {
+  return unsafe.replace(/[&<>"']/g, function (m) {
+    switch (m) {
+      case '&': return '&amp;';
+      case '<': return '&lt;';
+      case '>': return '&gt;';
+      case '"': return '&quot;';
+      case "'": return '&#039;';
+      default: return m;
+    }
+  });
+}
+
+// Convert includes text into HTML. If includes already contains HTML tags, keep it.
+function renderIncludesToHTML(includesText) {
+  if (!includesText) return '';
+  // If there's any HTML tag-like content, return as-is
+  if (/<[a-z][\s\S]*>/i.test(includesText)) return includesText;
+  const parts = includesText.split(',').map(s => s.trim()).filter(Boolean);
+  if (parts.length === 0) return '';
+  return '<ul>' + parts.map(p => '<li>' + escapeHtml(p) + '</li>').join('') + '</ul>';
+}
+
 // Attach modal close logic
-document.getElementById('modalClose').onclick = function() {
+document.getElementById('modalClose').onclick = function () {
   document.getElementById('productModal').style.display = 'none';
 };
 
@@ -158,29 +134,95 @@ function showCartToast() {
 }
 
 // Helper: Send product to cart via AJAX
-function addToCartAjax(data) {
-  fetch('../../project/cartPage/cart.php', {
+function addToCartAjax(data, onDone) {
+  // disable further adds while pending by returning a promise
+  // mark this request as AJAX so server can avoid redirecting
+  try { data.ajax = 1; } catch (e) { }
+  return fetch('../../project/cartPage/cart.php', {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
     body: new URLSearchParams(data).toString()
   })
-  .then(response => response.ok ? showCartToast() : alert('Error adding to cart'));
+    .then(response => {
+      // If server returned JSON (AJAX), parse it and update UI accordingly
+      const contentType = response.headers.get('content-type') || '';
+      if (contentType.indexOf('application/json') !== -1) {
+        return response.json().then(json => {
+          if (json && json.success) {
+            showCartToast();
+            // intentionally do not update a numeric badge in header
+            if (typeof onDone === 'function') onDone(null);
+          } else {
+            alert(json && json.message ? json.message : 'Error adding to cart');
+            if (typeof onDone === 'function') onDone(new Error('add_failed'));
+          }
+        });
+      }
+      if (response.redirected) {
+        // server redirects to cart.php on non-AJAX add; follow by navigating there
+        window.location.href = response.url;
+        return Promise.resolve();
+      }
+      if (response.ok) {
+        showCartToast();
+        if (typeof onDone === 'function') onDone(null);
+      } else {
+        alert('Error adding to cart');
+        if (typeof onDone === 'function') onDone(new Error('add_failed'));
+      }
+    }).catch(err => {
+      console.error('Add to cart failed', err);
+      alert('Unable to add to cart. Try again.');
+      if (typeof onDone === 'function') onDone(err);
+    });
 }
 
-// 🛒 button logic
-document.querySelectorAll('.cart-btn').forEach(btn => {
-  btn.addEventListener('click', function() {
-    const productElem = btn.closest('.product');
-    const title = productElem.querySelector('h3').textContent;
-    const price = productElem.querySelector('.new-price').textContent;
-    const imgElem = productElem.querySelector('img');
-    const img = imgElem ? imgElem.src : '';
+// Helper to get product object by name
+function getProductByName(name) {
+  return products.find(p => p.name === name);
+}
 
-    addToCartAjax({
-      add_to_cart: 1,
-      name: title,
-      price: price,
-      img: img
+// Helper to convert HTML includes to pipe-separated string
+// Helper to convert HTML includes to comma-separated string
+function htmlIncludesToComma(includesHtml) {
+  const temp = document.createElement('div');
+  temp.innerHTML = includesHtml;
+  const lis = temp.querySelectorAll('li');
+  // join with comma and a space for readability
+  return Array.from(lis).map(li => li.textContent.trim()).filter(Boolean).join(',');
+}
+
+// 🛒 button logic — cart button logic: map using DOM data-index and prevent double clicks
+document.querySelectorAll('.cart-btn').forEach((btn) => {
+  let pending = false;
+  btn.addEventListener('click', function (e) {
+    if (pending) return;
+    const productEl = e.target.closest('.product');
+    if (!productEl) return;
+    const idx = parseInt(productEl.getAttribute('data-index'), 10);
+    const p = products[idx] || null;
+    // build payload from server product when available, else from DOM
+    const payload = { add_to_cart: 1 };
+    if (p) {
+      payload.name = p.name;
+      // prefer the DOM data-price (numeric) when available to avoid formatted strings like "₹5,000"
+      payload.price = productEl.getAttribute('data-price') || p.price;
+      payload.img = p.img;
+      payload.desc = p.desc || '';
+      payload.includes = htmlIncludesToComma(p.includes || '');
+    } else {
+      const imgEl = productEl.querySelector('img');
+      payload.name = productEl.querySelector('h3') ? productEl.querySelector('h3').textContent.trim() : '';
+      payload.price = productEl.getAttribute('data-price') || '';
+      payload.img = imgEl ? imgEl.src : '';
+      payload.desc = productEl.getAttribute('data-desc') || '';
+      payload.includes = '';
+    }
+    pending = true;
+    btn.classList.add('loading');
+    addToCartAjax(payload, function () {
+      pending = false;
+      btn.classList.remove('loading');
     });
   });
 });
@@ -188,12 +230,27 @@ document.querySelectorAll('.cart-btn').forEach(btn => {
 // Modal "ADD TO CART" button logic
 const modalAddBtn = document.getElementById('modalAdd');
 if (modalAddBtn) {
-  modalAddBtn.addEventListener('click', function() {
+  modalAddBtn.addEventListener('click', function () {
     const title = document.getElementById('modalTitle').textContent;
-    const price = document.getElementById('modalPrice').textContent;
+    // Prefer raw numeric price stored on the modal, fallback to displayed text
+    const modalPriceEl = document.getElementById('modalPrice');
+    const price = (modalPriceEl && modalPriceEl.dataset && modalPriceEl.dataset.raw) ? modalPriceEl.dataset.raw : (modalPriceEl ? modalPriceEl.textContent : '');
     const img = document.getElementById('modalImg').src;
     const desc = document.getElementById('modalDesc').textContent;
-    const includes = document.getElementById('modalIncludes').textContent;
+    // Normalize includes inside modal to comma-separated values.
+    // Prefer extracting from any rendered <ul>/<li> so lists remain accurate.
+    const modalIncludesEl = document.getElementById('modalIncludes');
+    let includesCsv = '';
+    if (modalIncludesEl) {
+      const lis = modalIncludesEl.querySelectorAll('li');
+      if (lis.length) {
+        includesCsv = Array.from(lis).map(li => li.textContent.trim()).filter(Boolean).join(',');
+      } else {
+        // fallback: split on newlines or commas
+        const rawIncludes = modalIncludesEl.innerText || '';
+        includesCsv = rawIncludes.split(/[\r\n,]+/).map(s => s.trim()).filter(Boolean).join(',');
+      }
+    }
 
     addToCartAjax({
       add_to_cart: 1,
@@ -201,7 +258,31 @@ if (modalAddBtn) {
       price: price,
       img: img,
       desc: desc,
-      includes: includes
+      includes: includesCsv
     });
   });
 }
+
+// If a product id is passed in the URL (e.g., ?product=123), auto-scroll to the product,
+// give it a temporary highlight, and open the modal programmatically.
+function openProductFromQuery() {
+  const prodId = getQueryParam('product');
+  if (!prodId) return;
+  // find product element with matching data-id
+  const selector = `.product[data-id="${prodId}"]`;
+  const el = document.querySelector(selector);
+  if (!el) return;
+  // Scroll into view smoothly
+  try { el.scrollIntoView({ behavior: 'smooth', block: 'center' }); } catch (e) { el.scrollIntoView(); }
+  // Add temporary highlight
+  el.classList.add('highlighted-product');
+  setTimeout(() => el.classList.remove('highlighted-product'), 4000);
+  // Trigger view button to open modal (if present)
+  const viewBtn = el.querySelector('.view-btn');
+  if (viewBtn) {
+    // Delay slightly to allow scroll animation to finish
+    setTimeout(() => viewBtn.click(), 300);
+  }
+}
+
+window.addEventListener('DOMContentLoaded', openProductFromQuery);

@@ -1,0 +1,124 @@
+/* General Footer Styling */
+.footer {
+    background: var(--footer-bg);
+    padding: 24px 20px;
+    font-family: 'Mulish', Arial, sans-serif;
+    color: #fff;
+    box-shadow: 0 -6px 20px rgba(0, 0, 0, 0.14);
+}
+
+.footer-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    max-width: 1400px;
+    margin: auto;
+    gap: 20px;
+}
+
+.footer-box {
+    min-width: 140px;
+    flex: 1;
+    padding: 18px;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.05);
+}
+
+.footer-box:hover {
+    transform: none;
+}
+
+.footer-box h3 {
+    margin-bottom: 8px;
+    font-size: 16px;
+    color: rgba(255,255,255,0.95);
+    font-weight: 700;
+}
+
+.footer-box p {
+    margin: 6px 0;
+    font-size: 13px;
+    line-height: 1.5;
+    color: rgba(255,255,255,0.85);
+}
+
+.footer-box i {
+    margin-right: 8px;
+    color: var(--primary);
+    transition: all 0.3s ease;
+}
+
+.footer-box:hover i {
+    transform: scale(1.2);
+}
+
+/* About section styling */
+.about {
+    animation: fadeIn 1.2s ease-out;
+}
+
+/* Special spacing for the logo */
+.logo-box {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-box img {
+    width: 280px; /* larger footer logo */
+    height: auto;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+}
+
+.logo-box:hover img { transform: none; }
+
+/* Footer bottom */
+.footer-bottom {
+    text-align: center;
+    padding-top: 12px;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    font-size: 13px;
+    color: #D9E9CF;
+    margin-top: 16px;
+}
+
+/* Animations */
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        gap: 18px;
+    }
+    
+    .footer {
+        padding: 20px 12px;
+    }
+    
+    .footer-box {
+        min-width: 200px;
+        padding: 10px;
+    }
+}

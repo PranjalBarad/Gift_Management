@@ -1,0 +1,114 @@
+body {
+  font-family: 'Mulish', Arial, sans-serif;
+  background: #f8f8f8;
+  margin: 0;
+  padding: 0;
+}
+
+.checkout-container {
+    display: flex;
+    width: 100%;
+    padding: 100px 140px;
+    /* margin-right: 60px; */
+    gap: 140px;
+}
+.checkout-form {
+    width: 50%;
+    max-width: 450px;
+    height: 538px;
+    /* flex: 2; */
+    background: #f8f8f8;
+    padding: 32px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px #979797;
+    /* margin-right: 110px;  */
+}
+.checkout-summary {
+    width: 50%;
+    max-width: 450px;
+    height: auto;   /* REMOVE this line */
+    background: #e5e5e6;
+    padding: 40px 36px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px #eee;
+}
+.checkout-form h2 {
+    font-weight: 600;
+    font-size: 1.3rem;
+    border-bottom: 2px solid #52426d;
+    padding-bottom: 8px;
+    color: #302833;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 32px;
+
+}
+.checkout-form input,
+.checkout-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 28px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+.checkout-form label {
+    font-weight: 500;
+    margin-bottom: 6px;
+    display: block;
+    font-size: 1rem;
+}
+.checkout-summary button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    padding: 14px;
+    background: #593863;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 40px auto 0 auto; 
+    font-size: 1rem;
+    letter-spacing: 1.5px;
+}
+.checkout-summary button:hover {
+    background: #46265cab;
+    color: #000;
+    font-weight: 545;
+}
+.summary-title {
+    font-weight: bold;
+    color:#252127;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 22px;
+}
+#subtotal {
+    font-weight: 515;
+}
+.summary-total {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+.summary-products {
+    margin-bottom: 14px;
+}
+.summary-products li {
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+.pay-radio {
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    margin: 20px 0 1px 0;
+}

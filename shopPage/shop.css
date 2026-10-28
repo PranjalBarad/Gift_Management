@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: mulish;
+    text-decoration: none;
+}
+.shop-section {
+  padding: 109px 70px;
+}
+
+.breadcrumb
+{
+  font-size: 17px;
+  margin-bottom: 10px;
+}
+.breadcrumb a {
+  font-weight: 800;
+  color: #333;
+  text-decoration: none;
+}
+
+.breadcrumb span {
+  color: #777;   /* lighter gray for Shop */
+}
+
+.shop-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.shop-header p{
+  font-size: 15px;
+  /* margin-bottom: 3px; */
+  color: #777;
+}
+.shop-header select {
+  padding: 8px;
+  border-radius: 5px;
+  font-size: 15px;
+  padding: 5px 20px
+}
+
+.product-grid {
+  display: flex;          
+  flex-wrap: wrap;    
+  justify-content: center;    
+  gap: 18px;
+}
+
+.product {
+  width: 18rem;
+  height: 28rem;
+  overflow: hidden;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  background: #fff;
+  text-align: center;
+
+}
+
+
+.product:hover {
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  
+}
+
+.product-img {
+  position: relative;
+}
+
+.product img {
+   width: 18rem;
+  height: 24rem;
+  border-radius: 10px;
+  display: block;
+  margin-bottom: 18px;
+  transition: 0.5s ease;
+}
+.product img:hover{
+transform: scale(1.04);
+}
+.hover-icons {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.product:hover .hover-icons {
+  opacity: 1;
+}
+
+.hover-icons span {
+  background: rgb(249, 243, 255);
+  padding: 8px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 16px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.new-price {
+  color: #d43f3a;
+  font-weight: bold;
+} 

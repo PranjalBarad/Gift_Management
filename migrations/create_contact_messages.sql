@@ -1,0 +1,5 @@
+-- migrations/create_contact_messages.sql (deprecated)
+-- NOTE: This migration has been inlined into the top-level `schema.sql`.
+-- You can safely ignore this file. To create the database, paste the
+-- contents of `schema.sql` into phpMyAdmin or your MySQL client.
+-- (Left here as a placeholder for project history.)

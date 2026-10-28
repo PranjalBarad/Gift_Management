@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;800&display=swap');
+
+:root {
+  --background: #F5EFE8;
+  --surface: #E8EEF4;
+  --surface-soft: #D8E4EC;
+  --surface-strong: #C8D9E6;
+  --header-bg: #2F4156;
+  --footer-bg: #2F4156;
+  --text: #2F4156;
+  --text-muted: #567C8D;
+  --primary: #567C8D;
+  --primary-hover: #2F4156;
+  --accent: #567C8D;
+  --accent-dark: #2F4156;
+  --muted: #D8E4EC;
+  --border-radius: 16px;
+  --shadow: 0 10px 30px rgba(47, 65, 86, 0.12);
+  --white: #FFFFFF;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Mulish', Arial, sans-serif;
+  text-decoration: none;
+}
+
+body {
+  background: var(--background);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--header-bg);
+  font-weight: 800;
+}
+
+a {
+  color: var(--primary);
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--primary-hover);
+}
+
+button,
+.btn {
+  background: var(--primary);
+  color: var(--white);
+  border: none;
+  border-radius: var(--border-radius);
+  padding: 12px 26px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  transition: all 0.2s ease;
+}
+
+button:hover,
+.btn:hover {
+  background: var(--primary-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 14px 32px rgba(47, 65, 86, 0.14);
+}
+
+input,
+select,
+textarea {
+  border: 1px solid #cfcfcf;
+  border-radius: var(--border-radius);
+  padding: 10px 14px;
+  font-size: 1rem;
+  margin-bottom: 12px;
+  outline: none;
+  transition: border 0.2s;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border: 1.5px solid var(--accent);
+  background: var(--muted);
+}
+
+.card,
+.panel,
+.box {
+  background: var(--white);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+
+  .container,
+  .shop-section,
+  .about,
+  .who,
+  .cart-section,
+  .contact_div {
+    padding: 24px 8px !important;
+  }
+
+  .product,
+  .about-img img,
+  .contact-right img {
+    width: 100% !important;
+    height: auto !important;
+  }
+}

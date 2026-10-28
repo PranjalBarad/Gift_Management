@@ -6,7 +6,7 @@ require_once('../../project/headerPage/header.php');
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Us - WowBox</title>
+  <title>About Us - Buze Co Gift Shop</title>
   <link rel="stylesheet" href="aboutus.css">
 </head>
 <body>
@@ -15,14 +15,14 @@ require_once('../../project/headerPage/header.php');
    <div class="aboutus_div">
   <section class="about">
     <div class="about-img">
-      <img src="../../project/photos/book1.png" alt="WowBox Gift">
+      <img src="../../project/photos/AboutUs.jpg" alt="Buze Co Gift">
     </div>
     <div class="about-text">
-      <h2>About Us</h2>
+      <h2>About Buze Co</h2>
       <p>
-        At <b>WowBox</b>, We make gifting simple and special. Every box is filled with love, care, and joy. From birthdays to celebrations, we create lasting memories. Because gifts are not just things — they are feelings.<br><br>We believe every gift is more than just a product. It's an emotion,
+        At <b>Buze Co</b>, we make gifting simple and special. Every box is filled with love, care, and joy. From birthdays to celebrations, we create lasting memories. Because gifts are not just things — they are feelings.<br><br>We believe every gift is more than just a product. It's an emotion,
         a memory, and a smile waiting to happen. From birthdays to weddings, festivals to
-        corporate events, WowBox is here to make every moment extraordinary with thoughtfully
+        corporate events, Buze Co is here to make every moment extraordinary with thoughtfully
         curated surprises.
       </p>
     </div>
@@ -33,13 +33,13 @@ require_once('../../project/headerPage/header.php');
   <section class="who">   
     <div class="who-text">
       <h2>Who We Are</h2>
-      <p>At WowBox, we are dreamers, creators, and storytellers of joy. Every gift we design carries a touch of love, care, and magic — because we believe gifts are not just things, they are feelings wrapped beautifully. Our purpose is simple: to turn ordinary moments into unforgettable wow moments. 💝
+      <p>At Buze Co, we are dreamers, creators, and storytellers of joy. Every gift we design carries a touch of love, care, and magic — because we believe gifts are not just things, they are feelings wrapped beautifully. Our purpose is simple: to turn ordinary moments into unforgettable moments. 💝
 
       </p>
     </div>
     <div class="who-img">
       <!-- girl.png -->
-    <img src="../../project/photos/co1_5.jpeg" alt="Who We Are">
+    <img src="../../project/photos/AboutUs2.jpg" alt="Who We Are">
     </div>  
 </section>
 
@@ -72,15 +72,12 @@ require_once('../../project/headerPage/header.php');
       <p>
         Have a question or special request? We're here to help you with inquiries, custom orders, and <br> support. Let's connect and make your experience memorable.
       </p>
-      <a href="../../project/contactusPage/contactus.php">
+      <a href="../Contact_US_Page/contact_us.php">
       <button id="btn_id" onclick="contact_btn()">Contact now </button>
       </a>
     </div>
 
-    <!-- <div class="visit-extra">
-      <div class="extra-box">🏬 <h3>Come In</h3> <p>Step into WowBox and find your perfect gift.</p></div>
-      <div class="extra-box">📞 <h3>Get in Touch</h3> <p>Contact us anytime — we’re here to help you.</p></div>
-    </div> -->
+   
   </section>
 </div>
 </body>

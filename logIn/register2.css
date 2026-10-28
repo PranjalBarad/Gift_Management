@@ -5,56 +5,90 @@ body
     box-sizing: border-box;
     font-family: 'Segoe UI', sans-serif;
     height: 100vh;
-    background: url("gift7.jpg");
+    background: linear-gradient(135deg, rgba(255,255,255,0.04) 0%, rgba(158, 204, 211, 0.05) 100%);
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
     align-items: center;
     justify-content:right;
+    position: relative;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('../../project/photos/log in.jpg') center/cover no-repeat fixed;
+  opacity: 0.55;
+  transform: scaleX(-1);
+  z-index: -1;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(158, 204, 211, 0.04);
+  z-index: -1;
 }
 .container {
-  background: #9e51a5;
-  color: #fff;
+  display: flex;
+  justify-content: center;
+  /* backdrop-filter: blur(8px); */
+   /* background: transparent; */
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(158, 204, 211, 0.12) 100%);
+  color: var(--text);
   margin: 5rem;
   padding: 2.5rem;
   width: 100%;
-  max-width: 400px;
+  max-width: 370px;
   border-radius: 2rem;  
   text-align: center; 
+  border: 1px solid rgba(158, 204, 211, 0.3);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
 }
+ 
  .register-form p
  {
   font-size: 1rem;
  }
 a
 {
-    color: #ffcee5;
+    color: #131214;
     margin: 4px;
 }
 .btn
 {
     width: 100%;
-    max-width: 380px;
-    padding: .8rem;
-    border-radius: 12px;
+    max-width: 360px;
+    padding: .75rem;
+    border-radius: 14px;
     margin: 1rem;
     text-transform: uppercase;
-    background: linear-gradient(to right, #a72cd8 ,#fdfafe );
-    color: black;
-    font-weight: 550;
+    background: var(--primary);
+    color: #fff;
+    font-weight: 600;
     cursor: pointer;
+    border: none;
+    transition: all 0.25s ease;
 }
 .btn:hover
 {
-    background: linear-gradient(to right, #080808, #de8ff7);
+    background: var(--primary-hover);
     color:white;
-    font-size: 0.9rem;
-    font-weight: bold;
+    transform: translateY(-1px);
 }
 
 .register-form input {
   width: 100%;
-  max-width: 350px;
+  max-width: 330px;
   padding: .8rem;
   border-radius: 12px;
   margin: 0.7rem;
